@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Movies</title>
+    </head>
+    <body>
+        <h1>Movies</h1>
+        <div th:if="${movies.size() > 0}">
+            <h2>Film presenti nel database</h2>
+            <ul>
+                <li th:each="movie : ${movies}" th:text="${movie}">
+                </li>
+            </ul>
+            <a th:href="@{/}">Homepage</a>
+        </div>
+        <p th:unless="${movies.size() > 0}">Nessun film presente nel database</p>
+    </body>
+</html>
