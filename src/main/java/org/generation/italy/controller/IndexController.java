@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+// Gruppo 1: Rosario Mazzocca, Roberta Angioni, Alessandro Caraffa, Gianluca Pensa
+
 @Controller 
 @RequestMapping("/")
 public class IndexController {
@@ -22,8 +24,6 @@ public class IndexController {
 		}
 		
 		model.addAttribute("name", "Rosario");
-		
-		
 		
 		return "index";
 	}

@@ -2,17 +2,26 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Movies</title>
+        <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}"/>
     </head>
     <body>
-        <h1>Movies</h1>
+	    <header>
+		    <nav class="navbar navbar-dark bg-dark">
+				<div class="container justify-content-start mx-0">
+					<a class="btn btn-primary text-info me-5" href="/">Best of 2021</a>
+					<a th:href="@{/movies}" class="btn btn-primary me-2">Movies</a>
+					<a th:href="@{/songs}" class="btn btn-primary  ">Songs</a>
+				</div>
+		</header>
+        <h1 class="text-center pt-3 pb-4">Best Movies of 2021</h1 >
         <div th:if="${movies.size() > 0}">
-            <h2>Film presenti nel database</h2>
-            <ul>
-                <li th:each="movie : ${movies}" th:text="${movie}">
-                </li>
-            </ul>
-            <a th:href="@{/}">Homepage</a>
+           <div class="container text-center w-25">
+            <ul class="list-group">
+                <li class="list-group-item shadow-lg" aria-current="true" th:each="movie : ${movies}" th:text="${movie}"></li>
+            </ul >
+           </div >
         </div>
         <p th:unless="${movies.size() > 0}">Nessun film presente nel database</p>
+        <script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.bundle.min.js}"></script>
     </body>
 </html>
